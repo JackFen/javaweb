@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>css和html结合改进</title>
+    <!--在head标签中，使用style标签来定义各种自己需要的css样式
+         格式如下：
+              xxx{
+                   key:value value;
+                   }-->
+    <!--style标签用来定义css样式代码-->
+    <style type="text/css">
+        /*这是css样式注释 <!--这是html注释-->在style里面不适用*/
+        div{
+            border:1px solid red;
+        }
+        span{
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--需求1：分别定义两个div和span标签，分别修改每个div标签的样式为：边框一个像素，实线，红色--><!--这是html注释-->
+<div>div标签1</div>
+<div>div标签2</div>
+<span>span标签1</span>
+<span>span标签2</span>
+</body>
+</html>
+<!--缺点：
+    1.只能在同一页面内复用代码，不能在多个页面中复用css代码
+    2.维护起来不方便，实际的项目中会有成千上万的页面，要到每个页面中去修改。工作量过大-->
