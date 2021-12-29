@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5-数组.html</title>
+    <!--
+        格式：
+        var 数组名=[]; 空数组
+        var 数组名=[1,'abc',true] 定义数组同时赋值-->
+    <script type="text/javascript">
+        var arr=[];
+        alert(arr.length);
+        arr[2]=12;
+        alert(arr[0]);
+        alert(arr.length);/*JS语言中的数组，只要我们通过数组下标赋值，那么最大的下标值就会自动的给数组做扩容操作*/
+        alert(arr[1]);
+        for(var i=0;i<arr.length;i++)
+        {
+            arr[i]=i;
+            alert(arr[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

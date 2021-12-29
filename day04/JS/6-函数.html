@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>6-函数.html</title>
+    <!--
+        函数的两种定义方式
+        第一种，可以使用fuction关键字来定义函数
+          使用的格式如下：
+             function函数名（形参列表）{
+                  函数体
+             }
+           在JS中，如何定义带有返回值的函数
+           只需要在函数体内直接使用return语句返回值即可！
+        第二种：
+             var 函数名=function(形参列表){
+                函数体
+                }-->
+    <script type="text/javascript">
+        /*第一种定义方法*/
+        /*定义一个无参函数*/
+        function fun(){
+            alert("无参函数fun()被调用了");
+        }
+        fun();
+        /*定义一个有参函数*/
+        function fun2(a,b){
+            alert("有参函数fun2（）被调用了a="+a+"b="+b);
+        }
+        fun2(1,2);
+        /*定义一个带有返回值的函数*/
+        function  sum(a,b){
+            var sum=a+b;
+            return sum;
+        }
+        alert("1+2="+sum(1,2));
+        /*第二种定义方法*/
+        var fun1=function(){
+            alert("无参函数");
+        }
+        var fun3=function(a,b){
+            alert("有参函数"+a+" "+b);
+        }
+        fun3(3,4);
+        var fun4=function(a,b){
+            var sum=a+b;
+            return sum;
+        }
+        alert("3+4="+fun4(3,4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

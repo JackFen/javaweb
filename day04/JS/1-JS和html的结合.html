@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>1.JS和html的结合</title>
+    <!--JS是弱类型 Java是强类型
+        弱类型就是类型可变 强类型就是定义变量的时候。类型以及确定，而且不可变
+        例如：JAVA: int i=12;
+              JS: var i;
+                 i=12; 数值型
+                 i="abc";字符型
+         特点：
+             1.交互性（它可以做的就是信息的动态交互）
+             2.安全性（不允许直接访问本地磁盘）
+             3.跨平台性（只要是可以解释JS的浏览器都可以执行，和平台无关）-->
+    <!--JS和HTML代码的结合方式
+        1.第一种方式：只需要在head标签中或者在body标签中，使用script标签来书写javaScript代码
+        2.第二种方式：使用script标签引入单独的javascript代码文件-->
+</head>
+<body>
+<!--现在需要使用script引入js文件路径（可以是相对路径，也可以是绝对路径）
+     script标签可以用来定义js代码，也可以用来引入js文件
+     但是，两个功能二选一使用，不能同时使用两个功能-->
+<script type="text/javascript" src="1.js"></script>
+<script type="text/javascript">
+    /*alert是javaScript语言提供的一个警告框函数
+      它可以接收任何形式的参数，这个参数就是警告框的提示信息*/
+    alert("hello javascript!");
+</script>
+</body>
+</html>
