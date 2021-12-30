@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>7-函数的补充.html</title>
+    <!--在java中函数允许重载，但在JS中函数的重载会直接覆盖掉上一次的定义
+        函数的arguments隐形参数（只在function函数里）：在function函数中不需要定义，但却可以直接获取所有参数的变量。
+        隐形参数特别项java基础的可变长参数一样
+        public void fun(Object...args)
+        可变长参数其实是一个数组-->
+    <script type="text/javascript">
+        function fun(){
+            // alert(arguments.length);//可看参数个数
+            alert(arguments[0]);
+            alert("无参函数");
+        }
+        // function fun(a,b) {
+        //     alert("有参函数");
+        // }
+        // fun();
+        fun(1,3);
+        //需求：要求编写一个函数，用于计算所有函数相加的和并返回
+        function sum(num1,num2) {
+            var result=0;
+
+            for(var i=0;i<arguments.length;i++)
+            {
+                if(typeof (arguments[i])=="number"){
+                    result+=arguments[i];
+                }
+            }
+            return result;
+        }
+        alert("sum="+sum(1,2,3,4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>8-自定义对象.html</title>
+    <!--Object形式的自定义对象
+         var 变量名=new Object();//对象实例（空对象）
+         变量名.属性名=值;//定义一个属性
+         变量名.函数名=function(){}//定义一个函数
+         对象的访问：
+          变量名.属性/函数名（）;
+        {}花括号形式的自定义对象
+          var 变量名={
+             属性名：值，
+             属性名：值，//各个内容要用,来分割，最后一个内容不用加任何标点符号
+             属性名：值，//定义一个属性
+             函数名：function(){}//定义一个函数
+           };//对象实例
+         对象访问：
+           变量名.属性/函数名（）;
+          -->
+    <script type="text/javascript">
+        var obj=new Object();
+        obj.name="华仔";
+        obj.age=18;
+        obj.fun=function () {
+            alert(obj.name+obj.age);
+        }
+        obj.fun();
+        var obj1={
+            name:"jack",
+            age:20,
+            fun:function(){
+                alert(this.name+this.age);
+        }
+
+        }
+       obj1.fun();
+    </script>
+</head>
+<body>
+
+</body>
+</html>
