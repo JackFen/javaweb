@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //表示检查字符串是否包含字母e
+        //var patt=new RegExp("e");//表示查找单一对象
+        //var patt=/e/;//也是正则表达式对象
+        //var patt=/[abc]/;//表示检查字符串中是否包含字母a或b或c
+        //var patt=/[a-z]/; //表示检查是否包含小写字母//
+        //var patt=/[A-Z]/;//表示检查是否包含大写字母
+        //var patt=/[0-9]/;//表示检查是否包含0~9的数字
+        //\w元字符用于查找单词字符 单词字符包括：a~z、A~Z、以及下划线、包含_(下划线)字符
+        //var patt=/\w/;
+        /*量词
+        * n+ 匹配任何包含至少一个n的字符串。
+        * n* 匹配任何包含零个或多个n的字符串
+        * n? 匹配任何包含零个或者一个n的字符串
+        * n{X}匹配包含连续x个n的序列的字符串
+        * n{X,Y}匹配包含X个或Y个n的序列的字符串
+        * n{X,}匹配包含至少X个n的序列的字符串
+        * n$匹配任何结尾为n的字符串
+        * ^n匹配任何开头为n的字符串
+        * ？=n匹配任何其后紧接指定字符串n的字符串
+        * ？！n匹配任何其后没有紧接指定字符串n的字符串
+        * */
+        //表示检查字符串中至少包含一个a
+        //var patt=/a+/;
+        //var patt=/^a{3,5}$/;//表示从头到尾检查整个字符串匹配不匹配
+        var patt=/a{3,5}/;//表示检查满足条件的子字符串
+        var str="aaaa";
+        alert(patt.test(str));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

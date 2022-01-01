@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--需求：当用户点击了校验按钮，要获取输入框里的内容，然后验证其是否合法
+              验证的规则是：必须有字母数字。下划线组成。并且长度是5到12位
+         document对象的三个查询方法，如果有id属性，优先使用getElementById方法来查询
+         如果没有id属性，则优先使用getElementsByName方法来查询
+         如果id属性和name属性都没有最后再按标签名getElementsByTagname查
+         以上三个方法，一定要在页面加载完成之后执行才能查询到对象
+    -->
+    <script type="text/javascript">
+        function onclickfun() {
+            //1.当我们要操作一个标签的时候，一定要先获取这个标签对象
+            var usernameobj=document.getElementById("username");
+            // alert(usernameobj.value);
+            var usernameText=usernameobj.value;
+            //验证字符串符合某个规则，需要使用正则表达式技术
+            var patt=/^\w{5,12}$/;
+            /*test()方法用于测试某个字符串是不是匹配我的规则，
+            * 匹配就返回true，不匹配就返回false
+            * */
+            var usernamespanobj=document.getElementById("usernamespan")
+            /*innerHTML表示起始标签和结束标签中的内容
+            * innerHTML 这个是属性可读，可写*/
+            if(patt.test(usernameText)) {
+                //lert("用户名合法");
+                usernamespanobj.innerHTML="用户名合法";
+            }
+            else {
+                // alert("用户名不合法");
+                usernamespanobj.innerHTML="用户名不合法";
+            }
+        }
+    </script>
+</head>
+<body>
+用户名：<input type="text" id="username"/>
+<button onclick="onclickfun()">校验</button>
+<span id="usernamespan" style="color:red"></span>
+</body>
+</html>
