@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--使用jQuery一定要引入jQuery库吗？是的
+        jQuery中$到底代表什么？它是一个函数
+        怎么为安丘添加点击响应函数？
+          1.使用jQuery查询到标签对象
+          2.使用标签对象.dick(function(){});
+        $核心函数的四个作用：
+          1.传入参数为【函数】时：
+               表示页面加载完成之后。相当于window.onload=function(){}
+          2.传入参数为【HTML字符串】时：
+               会对我们创建这个html标签对象
+          3.传入参数为【选择器字符串】时
+               $("#id属性值");id选择器，根据id查询标签对象
+               $("标签名");标签名选择器，根据指定的标签名查询标签对象
+               $(".class属性值");类型选择器，可以根据class属性值查询标签对象
+          4.传入参数为【DOM对象】时：
+               会把这个dom对象转化为jQuery对象
+
+           -->
+    <script type="text/javascript" src="./jquery-3.6.0.js"></script><!--引入编辑不能一起出现在一个script内-->
+    <script type="text/javascript">
+        $(function () {//表示页面加载完成后，相当于window.onload=function(){}
+            var $btnobj=$("#bntId");//表示按id查询标签对象
+            $btnobj.click(function () {//绑定单击事件
+               alert("jQuery的单击事件")
+            });
+        })
+        /*alert($);*/
+        $(function () {
+            alert("页面加载完成后，自动调用");
+            $("<div>\n" +
+                "    <span>div-span1</span>\n" +
+                "    <span>div-span2</span>\n" +
+                "</div>").appendTo("body")
+            alert($("button").length);
+            var btnobj=document.getElementById("bntId");
+            alert($("btnobj"));
+        })
+
+    </script>
+</head>
+<body>
+<button id="bntId">say hello world</button>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+</body>
+</html>

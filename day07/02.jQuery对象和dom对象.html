@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Dom对象：
+          1.通过getElementById()查询出来的标签对象是Dom对象
+          2.通过getElementByName()查询出来的标签对象是Dom对象
+          3.通过getElementByTagName()查询出来的标签对象是Dom对象
+          4.通过createElement()方法创建的对象是Dom对象
+          DOM对象alert出来的效果是[objecct HTMLButtonElement]
+       jQuery对象
+          1.通过jQuery提供的API创建的对象，是jQuery对象
+          2.通过jQuery包装的dom对象，也是jQuery对象
+          3.通过jQuery提供的API查询到的对象，是jQuery对象
+          jQuery对象alert出来的效果是：[object Object]
+       jQuery对象是dom对象的数组+jQuery提供的一系列功能函数
+       jQuery对象不能使用DOM对象的属性和方法，DOM对象也不能使用jQuery对象的属性和方法
+       DOM和jQuery对象的互相转化：
+         1.DOM对象转化为jQuery对象
+              1）先有DOM对象
+              2）$(DOM对象)就可以转化为iQuery对象
+         2.jQuery对象转化为DOM对象
+              1）先有jQuery对象
+              2）jQuery对象[下标]取出相应的dom对象
+          -->
+    <script type="text/javascript" src="jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var arr=[12,"abc",true];
+            var $btns=$("button");
+            // for(var i=0;i<$btns.length;i++){
+            //     alert($btns[i]);
+            // }
+            //document.getElementById("testDiv").innerHTML="这是dom对象";
+            alert($(document.getElementById("testDiv"))[0]);//先把DOM对象转化为jQuery对象，然后再把jQuery对象转化为DOM对象
+        })
+
+    </script>
+</head>
+<body>
+<div id="testDiv">Atguigu is very good!</div>
+<button id="dom2dom">使用DOM对象调用DOM方法</button>
+<button id="dom2jQuery">使用DOM对象调用jQuery方法</button>
+<button id="jQuery2jQuery">使用jQuery对象调用jQuery方法</button>
+<button id="jQuery2dom">使用jQuery对象调用DOM方法</button>
+</body>
+</html>
