@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+    :input
+    :text
+    :password
+    :radio
+    :checkbox
+    :submit
+    :image
+    :reset
+    :buttton
+    :file
+    :hidden
+    表单对象的属性：
+    :enabled
+    :disabled
+    :checked
+    :selected
+
+    val()可以操作表单项的value属性值-->
+    <script type="text/javascript" src="../../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+
+        $(function () {
+            //1.对表单内可用input赋值操作
+            $("#btn01").click(function () {
+               $(":text:enabled").val("万能的程序员");
+            })
+
+            //2.对表单内不可用input赋值操作
+            $("#btn02").click(function () {
+                $(":text:disabled").val("万能的程序员2");
+            })
+            //3.获取多选框选中的个数
+            $("#btn03").click(function () {
+                alert($(":checkbox:checked").length);
+            })
+            //4.获取多选框选中的内容
+            $("#btn04").click(function () {
+                /*each是jQuery对象提供用来遍历元素的方法
+                * 在遍历的function函数中,有一个this对象，这个this对象就是当前遍历到的dom对象*/
+                var $checkboies=$(":checkbox:checked");
+                $checkboies.each(function () {
+                    alert(this.value);
+                })
+            })
+            //5.获取下拉列表选中的内容
+            $("#btn05").click(function () {
+                var $selected=$("select option:selected");
+                $selected.each(function () {
+                    alert(this.innerHTML);
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+<h3>表单对象属性过滤选择器</h3>
+<button id="btn01">对表单内可用input赋值操作</button>
+<button id="btn02">对表单内不可用input赋值操作</button>
+<button id="btn03">获取多选框选中的个数</button>
+<button id="btn04">获取多选框选中的内容</button>
+<button id="btn05">获取下拉列表选中的内容</button>
+<form>
+    可用元素：<input name="add" value="可用文本框1"/><br/>
+    不可用元素：<input name="email"disabled="disabled" value="不可用文本框1"/><br/>
+    可用元素：<input name="che" value="可用文本框2"/><br/>
+    可用元素：<input name="name" disabled="disabled" value="可用文本框2"/><br/>
+    多选框：<br/>
+    <input type="checkbox" name="newsletter" checked="checked" value="test1"/>test1
+    <input type="checkbox" name="newsletter" value="test2"/>test2
+    <input type="checkbox" name="newsletter"  value="test3"/>test3
+    <input type="checkbox" name="newsletter" checked="checked" value="test4"/>test4
+    <input type="checkbox" name="newsletter" value="test5"/>test5
+    <br><br>
+    下拉列表1：<br>
+    <select name="test" multiple="multiple" style="..." id="sele1">
+        <option>浙江</option>
+        <option selected="selected">辽宁</option>
+        <option>北京</option>
+        <option selected="selected">天津</option>
+        <option>广州</option>
+        <option>湖北</option>
+    </select>
+    <br><br>
+    下拉列表2：<br>
+    <select name="test2">
+        <option>浙江</option>
+        <option selected="selected">辽宁</option>
+        <option>北京</option>
+        <option>天津</option>
+        <option>广州</option>
+        <option>湖北</option>
+    </select>
+</form>
+</body>
+</html>
