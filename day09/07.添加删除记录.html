@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table{
+            border: black 1px solid;
+
+        }
+        td,th{
+            border: black 1px solid;
+        }
+    </style>
+    <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#addEmpButton").click(function () {
+                //创建一个行标签对象，添加到显示数据的表格中
+                var $trobj=$(" <tr>" +
+                    "<td>Jerry</td>" +
+                    "<td>jerry@sohu.com</td>" +
+                    "<td>8000</td>" +
+                    "<td><a href=\"deleteEmp?id=002\">Delete</a></td>" +
+                    "</tr>");
+                //添加到显示数据的表格中
+                $trobj.appendTo($("#employeeeTable"));
+            });
+        });
+    </script>
+</head>
+<body>
+<table id="employeeTable" cellspacing="0">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>Tom</td>
+        <td>tom@tom.com</td>
+        <td>5000</td>
+        <td><a href="deleteEmp?id=001">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Jerry</td>
+        <td>jerry@sohu.com</td>
+        <td>8000</td>
+        <td><a href="deleteEmp?id=002">Delete</a></td>
+    </tr>
+    <tr>
+        <td>Bob</td>
+        <td>Bob@tom.com</td>
+        <td>10000</td>
+        <td><a href="deleteEmp?id=003">Delete</a></td>
+    </tr>
+</table>
+<div id="formDiv">
+    <h4>添加新员工</h4>
+    <table cellspacing="0">
+        <tr>
+            <td class="word">name:</td>
+            <td class="inp">
+                <input type="text" name="empName" id="empName"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="word">email:</td>
+            <td class="inp">
+                <input type="text" name="email" id="email"/>
+            </td>
+        </tr>
+        <tr>
+            <td class="word">salary:</td>
+            <td class="inp">
+                <input type="text" name="salary" id="salary"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <button id="addEmpButton" value="abc">
+                    submit
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
