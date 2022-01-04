@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        click()     它可以绑定单击事件，以及触发单击事件
+        mouseover() 鼠标移出事件
+        mouseout()  鼠标移出事件
+        bind()      可以给元素一绑定一个或多个事件
+        one()       使用上跟bind一样。但是one方法绑定的事件只会响应一次
+        live()       也是用来绑定事件。它可以用来绑定选择器匹配的所有元素的事件。哪怕这个元素是后面动态创建出来的也有效
+        unbind()     跟bind方法相反的操作，解除事件的绑定
+      事件的冒泡：事件的冒泡是指，父子元素同时监听同一个事件。当触发子元素的事件时，同一个事件也被传递到了父元素的事件里去响应。
+      在事件函数体内，return false;可以阻止事件的冒泡传递
+        -->
+    <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // $("h5").click(function () {//传function是绑定事件
+            //     alert("h5单击事件==click方法绑定");
+            // });
+            // $('<h5 class="head" style="border: 1px black solid;width: 60px;height: 20px;">事件绑定</h5>').appendTo($("#panel"));
+            // $("button").click(function () {
+            //     $("h5").click();//不传function是触发事件
+            // })
+            // //鼠标移入
+            // $("h5").mouseover(function () {
+            //     console.log("你进来了");
+            // })
+            // //鼠标移出
+            // $("h5").mouseout(function () {
+            //     console.log("你出来了");
+            // })
+
+        //冒泡事件演示
+        $("#content").click(function () {
+            alert("我是div");
+        });
+        $("span").click(function () {
+            alert("我是span");
+        });
+        });
+    </script>
+</head>
+<body>
+<div id="panel">
+    <h5 class="head" style="border: 1px black solid;width: 60px;height: 20px;">事件绑定</h5>
+    <button>按钮</button>
+</div>
+<div id="content">
+    外层div元素
+    <span>内层span元素</span>
+    外层div元素
+</div>
+</body>
+</html>

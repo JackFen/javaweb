@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            text-align: center;
+        }
+        #small{
+            margin-top: 15px;
+        }
+        #showMsg{
+            position: absolute;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#showBig").hide();
+            $("#small").offset({
+                left: 1,
+                top: 1
+            });
+            $("#small").bind("mouseover mouseout mousemove",function (event) {
+                if(event.type=="mouseover"){
+                    $("#showBig").show();
+                }
+                else if(event.type=="mouseout"){
+                    $("#showBig").hide();
+                }else if(event.type="mousemove"){
+                    $("#showBig").offset({
+                        left:event.pageX+10,
+                        top:event.pageY+10
+                    });
+                }
+            });
+
+        });
+    </script>
+</head>
+<body>
+<img id="small" src="1.jpg" style="width: 150px;height: 100px;" />
+<div id="showBig">
+    <img src="2.jpg" style="width: 250px;height: 200px"/>
+</div>
+</body>
+</html>

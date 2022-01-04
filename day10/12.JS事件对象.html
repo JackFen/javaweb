@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        JS事件对象：
+          事件对象，是封装有触发的事件信息的一个javascript对象
+          我们重点关系的是怎么拿到这个javascript的事件，以及使用
+          如何获取JS事件对象？
+            在给定元素绑定事件的时候，在事件的function(event)参数列表添加一个参数，这个参数名，我们习惯取名为event
+            这个event就是JS传递参数事件处理函数的事件对象-->
+    <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+            //1.原生JS获取事件对象
+            // window.onload=function () {
+            //     document.getElementById("areaDiv").onclick=function (event) {
+            //         console.log(event);
+            //     };
+            // };
+            $(function () {
+                // //2.jQuery代码获取事件对象
+                // $("#areaDiv").click(function (event) {
+                //     console.log(event);
+                // })
+                //3.使用bind同时对多个事件绑定同一个函数
+                $("#areaDiv").bind("mouseover mouseout",function (event) {
+                    if(event.type=='mouseover'){
+                        console.log("鼠标移入");
+                    }
+                    else if(event.type=='mouseout'){
+                        console.log("鼠标移出");
+                    }
+                })
+             });
+    </script>
+</head>
+<body>
+<div id="areaDiv">12</div>
+<div id="showMsg">34</div>
+</body>
+</html>

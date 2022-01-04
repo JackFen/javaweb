@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--
+        他们分别在什么时候触发？
+           1.jQuery的页面加载完成之后是浏览器的内核解析完页面的标签创建好的DOM对象之后就会马上执行
+           2.原生JS的页面加载完成之后，除了要等浏览器内核解析完标签创建好DOM对象，还要等标签显示时需要的内容加载完成
+         他们触发的顺序？
+           1.jQuery页面加载完成之后先执行
+           2.原生JS的页面加载完成后执行
+          他们执行的次数？
+           1.原生JS的页面加载完成之后，只会执行最后一次的赋值函数
+           2.jQuery的页面加载完成之后时全把注册的function函数依次顺序执行-->
+    <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        window.onload=function () {
+            alert("原生js执行-1");
+        }
+        window.onload=function () {
+            alert("原生js执行-2");
+        }
+        window.onload=function () {
+            alert("原生js执行-3");
+        }
+        $(function () {
+            alert("jQuery执行-1");
+        });
+        $(function () {
+            alert("jQuery执行-2");
+        });
+        $(function () {
+            alert("jQuery执行-3");
+        });
+    </script>
+</head>
+<body>
+<button value="按钮">按钮</button>
+<iframe src="http://localhost:8080"></iframe>
+<img src="http://localhost:8080/1.jpg" alt=""/>
+</body>
+</html>
