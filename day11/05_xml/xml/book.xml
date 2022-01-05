@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+     <?xml version="1.0" encoding="utf-8" ?>
+     以上内容就是xml文件的声明
+     version="1.0"  version表示xml的版本
+     encoding="utf-8"  encoding表示xml文件本身的编码
+    xml属性
+      xml的标签属性和html的标签属性是非常类似的，属性可以提供元素的额外信息
+        在标签上可以书写属性：
+           一个标签上可以书写多个属性。每个属性的值必须用引号引起来
+           规则和标签的书写规则一致
+      xml文档必须有根元素
+        根元素就是顶级元素，
+        没有父标签的元素，叫顶级元素
+        根元素是没有父标签的顶级元素，而且是唯一一个才行
+      文本区域（CDATA区）
+        CDATA语法可以告诉xml解析器，我CDATA里的文本内容只是纯文本，不需要xml语法解析
+        CDATA格式：
+        <![CDATA[这里可以把你输入的字符原样显示，不会解析xml]]>
+    -->
+<books>
+    <book sn="SN123456789"><!--book表示一个图书信息 sn属性表示图书序列号-->
+        <name>时间简史</name><!--name标签表示书名-->
+        <author>霍金</author><!--author表示作者-->
+        <price>75</price><!--price表示价钱-->
+    </book>
+    <book sn="SN123456789"><!--book表示一个图书信息 sn属性表示图书序列号-->
+        <name>java从入门到放弃</name><!--name标签表示书名-->
+        <author>
+            <![CDATA[<<<<霍银]]></author><!--author表示作者-->
+        <price>9.9</price><!--price表示价钱-->
+    </book>
+    <book sn="SN15256" name="你猜" author="不知道" price="54"></book><!--单标签-->
+</books>
+
