@@ -55,5 +55,28 @@ errorPage表示错误后自动跳转的路径
 <%="我是字符串"%><br/>
 <%--4.输出对象--%>
 <%=map%><br/>
+<%--1.代码脚本  if语句--%>
+<%
+    int i=12;
+    if(i==12){
+        System.out.println("true");
+    }
+    else{
+        System.out.println("false");
+    }
+%>
+<%--2.代码脚本   for循环--%>
+<%
+    for (int j=0;j<10;j++)
+    {
+        System.out.println(j);
+    }
+%>
+<%--3.翻译java文件中_jspService方法内的代码块都可以写--%>
+<%
+    String username = request.getParameter("username");
+    System.out.println("用户名的请求参数是："+username);
+%>
+<%--这是jsp注释--%>
 </body>
 </html>
