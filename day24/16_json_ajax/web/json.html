@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //json的定义
+        var jsonObj={
+            "key1":12,
+            "key2":"abc",
+            "key3":true,
+            "key4":[11,"arr",false],
+            "key5":{
+                "key5_1":551,
+                "key5_2":"key5_2value"
+            },
+            "key6":[{
+                "key6_1_1":6611,
+                "key6_1_2":"key6_1_2value"
+            },{
+                "key6_2_1":6621,
+                "key6_2_2":"key6_2_2value"
+            }]
+        };
+        //json的访问
+        // alert(typeof (jsonObj));//object json就是一个对象
+        // alert(jsonObj.key1);
+        // alert(jsonObj.key4);//得到数组
+        // alert(jsonObj.key4[0]);//得到数组中某一个元素
+        //json对象转为字符串
+        var jsonObjstring=JSON.stringify(jsonObj);//特别像java中对象的toString
+        //json字符串转为json对象
+        var jsonObj2=JSON.parse(jsonObjstring);
+    </script>
+</head>
+<body>
+
+</body>
+</html>
